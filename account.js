@@ -7,6 +7,20 @@
 (function () {
     'use strict';
 
+    /* ---------- 0. Failed sign-in returns ----------
+       If Google or an email link comes back with an error (e.g. ?error=...&error_description=...),
+       send the visitor to the login page, which explains it, instead of leaving the error in the address bar. */
+
+    (function () {
+        var params = new URLSearchParams(window.location.search + '&' + window.location.hash.replace(/^#/, ''));
+        var code = params.get('error_code') || params.get('error');
+        if (!code) return;
+        var onAuthPage = /(?:login|signup|reset-password)\.html$/.test(window.location.pathname);
+        var target = 'login.html?auth_error=' + encodeURIComponent(code);
+        if (onAuthPage && window.location.pathname.indexOf('reset-password.html') !== -1) return; // reset page explains its own errors
+        window.location.replace(onAuthPage ? window.location.pathname.replace(/[^/]*$/, '') + target : target);
+    })();
+
     /* ---------- 1. Supabase connection ---------- */
 
     var settings = window.AMBER_SUPABASE || {};

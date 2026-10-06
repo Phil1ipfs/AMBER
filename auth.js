@@ -373,6 +373,19 @@
         showAlert(error && error.message ? error.message : 'Something went wrong. Please try again.', 'error');
     }
 
+    // Arrived here after a failed Google sign-in or an old email link (see account.js).
+    var returnError = new URLSearchParams(window.location.search).get('auth_error');
+    if (returnError && mode !== 'reset') {
+        var RETURN_ERRORS = {
+            bad_oauth_state: 'Google sign-in took too long or was started twice. Please click “Continue with Google” again.',
+            otp_expired: 'That email link has expired or was already used. Please log in, or request a new link.',
+            access_denied: 'Sign-in was cancelled or the link is no longer valid. Please try again.',
+            provider_email_needs_verification: 'Please confirm your email address first, then log in.'
+        };
+        showAlert(RETURN_ERRORS[returnError] || 'Sign-in didn’t finish. Please try again.', 'error');
+        if (window.history.replaceState) window.history.replaceState(null, '', window.location.pathname);
+    }
+
     // Re-check a field as the visitor fixes it (only after the first submit attempt).
     fieldNames().forEach(function (name) {
         var input = field(name);
