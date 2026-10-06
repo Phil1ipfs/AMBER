@@ -78,8 +78,18 @@
         return ((info && info.email) || '?').charAt(0).toUpperCase();
     }
 
+    // Asks Supabase (public settings endpoint) whether a sign-in method like Google is switched on.
+    // If the check itself fails, assume it is on and let Supabase decide.
+    function providerEnabled(name) {
+        return fetch(settings.url.replace(/\/+$/, '') + '/auth/v1/settings', { headers: { apikey: settings.anonKey } })
+            .then(function (response) { return response.json(); })
+            .then(function (data) { return !!(data && data.external && data.external[name]); })
+            .catch(function () { return true; });
+    }
+
     window.AmberAccount = {
         client: client,
+        providerEnabled: providerEnabled,
         setRemember: setRemember,
         userInfo: userInfo,
         initials: initials

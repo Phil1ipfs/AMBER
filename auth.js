@@ -107,11 +107,18 @@
         signInWithGoogle: function () {
             var stop = requireClient();
             if (stop) return stop;
-            setRemember(true);
-            return client.auth.signInWithOAuth({
-                provider: 'google',
-                options: { redirectTo: pageUrl(nextPage()) }
-            }).then(unwrap, rethrow).then(function () { return { redirecting: true }; });
+            // Check Google is switched on first, so visitors never land on a raw Supabase error page.
+            return account.providerEnabled('google').then(function (enabled) {
+                if (!enabled) throw new Error(FRIENDLY_ERRORS.provider_disabled);
+                setRemember(true);
+                return client.auth.signInWithOAuth({
+                    provider: 'google',
+                    options: { redirectTo: pageUrl(nextPage()), skipBrowserRedirect: true }
+                }).then(unwrap, rethrow);
+            }).then(function (data) {
+                window.location.assign(data.url);
+                return { redirecting: true };
+            });
         },
         // Emails a link to reset-password.html, where the visitor chooses a new password.
         resetPassword: function (identifier) {
