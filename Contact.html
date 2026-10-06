@@ -3,123 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Amber</title>
+    <title>Contact Us | Amber</title>
+    <meta name="description" content="Get in touch with Amber for reservations, catering and feedback.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="Contact.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="asset/image/amberlogo.png" alt="Amber Logo">
-            </div>
-            <nav>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html"><img src="asset/image/amberlogo.png" alt="Amber home" width="166" height="84"></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-bar"></span><span class="sr-only">Menu</span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Community</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="About.html">About Us</a></li>
                     <li><a href="menu.html">Menu</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="Contact.html" aria-current="page">Contact</a></li>
                 </ul>
             </nav>
-            <div class="profile">
-                <img src="asset/image/Profile (1).png" alt="profile">
+            <div class="header-actions">
+                <a class="profile" href="login.html" aria-label="Log in or sign up"><svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg></a>
+                <button class="cart-button" type="button" data-cart-open aria-label="Open cart" aria-controls="cart-drawer">
+                    <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 11.2a1.5 1.5 0 0 1-1.5 1.3H8a1.5 1.5 0 0 1-1.5-1.3z"/><path d="M9 10.5V7a3 3 0 0 1 6 0v3.5"/></svg>
+                    <span class="cart-count" data-cart-count hidden>0</span>
+                </button>
             </div>
-            <div class="cart">
-                <img src="asset/image/Cart.png" alt="cart">
-            </div>
+        </div>
     </header>
 
-    <main>
-        <section class="contact-section">
-            <div class="contact-banner">
-                <h1><span>Contact Us</span>
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-linkedin"></i>
-                </h1>
+    <main id="main">
+        <section class="page-banner">
+            <div class="container">
+                <div class="page-title">
+                    <img class="wing" src="asset/image/wing.png" alt="" width="60" height="124">
+                    <h1>Contact Us</h1>
+                    <img class="wing" src="asset/image/right wing.png" alt="" width="60" height="124">
+                </div>
+                <p>Questions, catering requests or feedback? We'd love to hear from you.</p>
             </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Contact Information</h2>
-                    <p>Bring the table winwin survival strategies ensure proactive domination the end of the day going real times multiple touchpoints.</p>
-                    <p><img src="asset/image/Contactuss/Location (1).png" alt="Location Icon"> Riverside 25, San Francisco, California</p>
-                    <p><img src="asset/image/Contactuss/mail.png" alt="Email Icon"> evanmattew@mail.com</p>
-                    <p><img src="asset/image/Contactuss/Contact Us.png" alt="Phone Icon"> 800-234-567</p>
-                    <div class="social-icons">
-                        <a href="#"><img src="asset/image/socialmedaccount/Twitter (1).png" alt="twitter"></a>
-                        <a href="#"><img src="asset/image/socialmedaccount/Pintrest.png" alt="Pinterest"></a>
-                        <a href="#"><img src="asset/image/socialmedaccount/insta.png" alt="insta"></a>
-                        <a href="#"><img src="asset/image/socialmedaccount/facebook (3).png" alt="fb"></a>
+        </section>
+
+        <section class="section">
+            <div class="container contact-grid">
+                <div class="info-card contact-info">
+                    <h2>Contact information</h2>
+                    <p>Reach us by phone or email, visit the restaurant, or send us a message using the form.</p>
+                    <ul class="info-list">
+                        <li><img src="asset/image/Contactuss/Location (1).png" alt=""><div><strong>Address</strong>Riverside 25, San Francisco, California</div></li>
+                        <li><img src="asset/image/Contactuss/mail.png" alt=""><div><strong>Email</strong><a href="mailto:evanmattew@mail.com">evanmattew@mail.com</a></div></li>
+                        <li><img src="asset/image/Contactuss/Contact Us.png" alt=""><div><strong>Phone</strong><a href="tel:800234567">800-234-567</a></div></li>
+                    </ul>
+                    <h3>Follow us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Amber on Twitter"><img src="asset/image/socialmedaccount/Twitter (1).png" alt=""></a>
+                        <a href="#" aria-label="Amber on Pinterest"><img src="asset/image/socialmedaccount/Pintrest.png" alt=""></a>
+                        <a href="#" aria-label="Amber on Instagram"><img src="asset/image/socialmedaccount/insta.png" alt=""></a>
+                        <a href="#" aria-label="Amber on Facebook"><img src="asset/image/socialmedaccount/facebook (3).png" alt=""></a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h2>Email Us</h2>
-                    <form>
-                        <input type="text" name="name" placeholder="Name">
-                        <input type="email" name="email" placeholder="Email">
-                        <input type="text" name="subject" placeholder="Subject">
-                        <input type="tel" name="phone" placeholder="Phone">
-                        <textarea name="message" placeholder="Message"></textarea>
-                        <button type="submit">Send</button>
+
+                <div class="contact-form-card">
+                    <h2>Email us</h2>
+                    <!-- Formspree setup: create a free form at https://formspree.io,
+                         then replace YOUR_FORM_ID below with your form's ID (e.g. xyzabcde). -->
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-contact-form>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" autocomplete="name" required>
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" autocomplete="email" required>
+                            </div>
+                            <div class="field">
+                                <label for="phone">Phone <span class="optional">(optional)</span></label>
+                                <input id="phone" name="phone" type="tel" autocomplete="tel">
+                            </div>
+                            <div class="field">
+                                <label for="subject">Subject</label>
+                                <input id="subject" name="subject" type="text" required>
+                            </div>
+                            <div class="field field-full">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                        </div>
+                        <!-- Spam trap: real visitors never see or fill this field. -->
+                        <input class="sr-only" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <button class="btn btn-primary" type="submit">Send message</button>
+                        <p class="form-status" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
         </section>
-        <section class="map-location">
-            <h2>Our Map Location</h2>
-            <div class="maps">
-                <div class="maps1">
 
+        <section class="location location-compact" aria-labelledby="map-title">
+            <img class="location-decor location-decor-left" src="asset/image/decor/leaf-sprig.svg" alt="">
+            <img class="location-decor location-decor-right" src="asset/image/decor/leaf-sprig.svg" alt="">
+            <div class="container">
+                <div class="section-head">
+                    <p class="script-label">Find Us</p>
+                    <h2 id="map-title">Our map location</h2>
+                    <p class="lead">Come hungry, leave happy. We're open Monday to Friday, 10:00 AM – 9:00 PM.</p>
+                </div>
+
+                <div class="location-stage">
+                    <div class="location-panel">
+                        <p class="panel-label">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                            Our location
+                        </p>
+                        <p class="panel-address">Riverside 25, San Francisco, California</p>
+                        <hr>
+                        <p class="panel-label">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                            Opening hours
+                        </p>
+                        <p class="panel-hours">Monday to Friday<br>10:00 AM – 9:00 PM</p>
+                        <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&amp;query=37.7749,-122.4194" target="_blank" rel="noopener">
+                            View on Google Maps
+                            <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <span class="sr-only">(opens in a new tab)</span>
+                        </a>
+                    </div>
+
+                    <!-- Live Google map (no API key needed). The address "Riverside 25" isn't recognised by Google,
+                         so the map is centred on San Francisco and Amber's marker is drawn on top.
+                         Once you have the real address, change data-lat / data-lng to its coordinates. -->
+                    <div class="map-card" data-map data-lat="37.7749" data-lng="-122.4194" data-zoom="13">
+                        <iframe src="https://maps.google.com/maps?ll=37.7749,-122.4194&amp;z=13&amp;t=m&amp;output=embed" title="Map of San Francisco showing Amber's location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="map-marker" aria-hidden="true">
+                            <div class="map-popup"><strong>Amber Filipino Food</strong>Riverside 25, San Francisco</div>
+                            <svg class="map-pin" viewBox="0 0 40 52"><path d="M20 51S3 33 3 19a17 17 0 0 1 34 0c0 14-17 32-17 32z" fill="#C81924" stroke="#fff" stroke-width="2.5"/><circle cx="20" cy="19" r="6.5" fill="#fff"/></svg>
+                        </div>
+                        <div class="map-type" role="group" aria-label="Map view" hidden>
+                            <button type="button" data-map-type="m" aria-pressed="true">Map</button>
+                            <button type="button" data-map-type="k" aria-pressed="false">Satellite</button>
+                        </div>
+                        <div class="map-zoom" hidden>
+                            <button type="button" data-map-zoom="1" aria-label="Zoom in">+</button>
+                            <button type="button" data-map-zoom="-1" aria-label="Zoom out">&minus;</button>
+                            <button type="button" data-map-recenter aria-label="Re-center map on Amber">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Catering</h3>
+    <footer class="site-footer">
+        <div class="footer-decor" aria-hidden="true">
+            <img class="decor-leaf-left" src="asset/image/decor/leaf-sprig.svg" alt="">
+            <img class="decor-leaf-right" src="asset/image/decor/leaf-sprig.svg" alt="">
+            <img class="decor-food-left" src="asset/image/Lomi Special.png" alt="" loading="lazy">
+            <img class="decor-food-right" src="asset/image/Hotatay soup.png" alt="" loading="lazy">
+        </div>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="asset/image/amberlogo.png" alt="Amber" width="166" height="84">
+                <p>Filipino favorites cooked fresh every day, for dine-in, takeout and catering.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Amber on Facebook"><img src="asset/image/socialmedaccount/FB.png" alt=""></a>
+                    <a href="#" aria-label="Amber on Instagram"><img src="asset/image/socialmedaccount/ig.png" alt=""></a>
+                    <a href="#" aria-label="Amber on Twitter"><img src="asset/image/socialmedaccount/twitter.png" alt=""></a>
+                    <a href="#" aria-label="Amber on LinkedIn"><img src="asset/image/socialmedaccount/linkined.png" alt=""></a>
+                </div>
+            </div>
+            <div>
+                <h2>Explore</h2>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Opening Hours</h3>
+            <div>
+                <h2><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Opening Hours</h2>
                 <ul>
-                    <li>Monday</li>
-                    <li>Tuesday</li>
-                    <li>Wednesday</li>
-                    <li>Thursday</li>
-                    <li>Friday</li>
+                    <li>Monday to Friday</li>
+                    <li>10:00 AM – 9:00 PM</li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Follow us</h3>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact us</h3>
-                <ul>
-                    <li>Amber.com.ph</li>
-                    <li>09098-8888</li>
-                    <li>8-88488</li>
+            <div>
+                <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Contact Us</h2>
+                <ul class="footer-icon-list">
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><a href="tel:800234567">800-234-567</a></li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Riverside 25, San Francisco, California</span></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-icons">
-            <a href="#"><img src="asset/image/socialmedaccount/FB.png" alt="Facebook"></a>
-            <a href="#"><img src="asset/image/socialmedaccount/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="asset/image/socialmedaccount/ig.png" alt="Instagram"></a>
-            <a href="#"><img src="asset/image/socialmedaccount/linkined.png" alt="LinkedIn"></a>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Amber. All rights reserved.</p>
+            <p class="footer-tagline" aria-hidden="true">Good food brings people together &hearts;</p>
         </div>
     </footer>
+
+    <!-- Accounts (Supabase): shows the signed-in avatar + menu in the header -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="account.js"></script>
+    <script src="site.js"></script>
 </body>
 </html>

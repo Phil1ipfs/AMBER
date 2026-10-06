@@ -1,0 +1,549 @@
+/* ==========================================================================
+   Amber — Home page
+   Shared header, footer, buttons and menu cards are in styles.css.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(5rem, 10vw, 7.5rem);
+    background: radial-gradient(circle at 85% 20%, var(--red) 0%, var(--red-dark) 45%, var(--red-deep) 100%);
+    color: #fff;
+}
+
+/* Faint dot pattern on the right, plus a warm glow behind the dish photos */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 75% 45%, rgb(255 204 0 / 0.22), transparent 38%),
+        radial-gradient(rgb(255 255 255 / 0.12) 1.5px, transparent 1.6px) 0 0 / 22px 22px;
+    -webkit-mask-image: linear-gradient(90deg, transparent 35%, #000 75%);
+    mask-image: linear-gradient(90deg, transparent 35%, #000 75%);
+    pointer-events: none;
+}
+
+.hero-decor {
+    position: absolute;
+    pointer-events: none;
+}
+
+.hero-decor-leaf {
+    left: -30px;
+    bottom: 40px;
+    width: 140px;
+    opacity: 0.35;
+    transform: rotate(20deg);
+}
+
+.hero-decor-sun {
+    top: 28px;
+    left: 44%;
+    width: 70px;
+    opacity: 0.5;
+    animation: hero-spin 40s linear infinite;
+}
+
+.hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+}
+
+/* Staggered entrance */
+.hero-content > * {
+    animation: hero-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-content > :nth-child(2) { animation-delay: 0.08s; }
+.hero-content > :nth-child(3) { animation-delay: 0.16s; }
+.hero-content > :nth-child(4) { animation-delay: 0.24s; }
+.hero-content > :nth-child(5) { animation-delay: 0.32s; }
+
+.hero-showcase {
+    animation: hero-rise 0.8s 0.15s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes hero-rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: none; }
+}
+
+@keyframes hero-spin {
+    to { transform: rotate(360deg); }
+}
+
+.hero-script {
+    display: inline-block;
+    margin: 0 0 0.5rem;
+    font-family: var(--font-script);
+    font-size: clamp(1.9rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--yellow);
+    transform: rotate(-4deg);
+    transform-origin: left bottom;
+}
+
+.hero h1 {
+    max-width: 15ch;
+    font-size: clamp(2.4rem, 5.2vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+/* "cooked fresh" in gold with a hand-drawn underline */
+.hero-highlight {
+    position: relative;
+    display: inline-block;
+    color: var(--yellow);
+}
+
+.hero-highlight svg {
+    position: absolute;
+    left: 0;
+    bottom: -0.12em;
+    width: 100%;
+    height: 0.28em;
+    fill: none;
+    stroke: var(--yellow);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
+    animation: hero-draw 0.9s 0.6s ease-out forwards;
+}
+
+@keyframes hero-draw {
+    to { stroke-dashoffset: 0; }
+}
+
+.hero-lead {
+    max-width: 34rem;
+    font-size: 1.15rem;
+    opacity: 0.95;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 2rem;
+}
+
+.btn-lg {
+    min-height: 54px;
+    padding: 0.85rem 1.6rem;
+    font-size: 1.02rem;
+}
+
+.hero-actions svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hero-actions .btn-gold:hover {
+    box-shadow: 0 14px 28px rgb(0 0 0 / 0.25);
+}
+
+.hero-actions .btn-ghost-light:hover {
+    transform: translateY(-2px);
+}
+
+.hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hero-chips li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.95rem;
+    border: 1px solid rgb(255 255 255 / 0.25);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.1);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.hero-chips svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: var(--yellow);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ---------- Featured dish showcase ---------- */
+
+.hero-showcase {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.showcase-stage {
+    position: relative;
+    transition: transform 0.25s ease-out;
+    will-change: transform;
+}
+
+.showcase-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 5px solid var(--yellow);
+    border-radius: 28px;
+    background: var(--yellow-soft);
+    box-shadow: 0 30px 60px rgb(60 0 5 / 0.45);
+    transition: opacity 0.25s ease, transform 0.35s ease;
+}
+
+.showcase-img.is-swapping {
+    opacity: 0;
+    transform: scale(0.97);
+}
+
+/* Rotating "Fresh daily - Made with love" badge */
+.showcase-badge {
+    position: absolute;
+    top: -1.75rem;
+    right: -1.25rem;
+    width: 116px;
+    height: 116px;
+    filter: drop-shadow(0 10px 18px rgb(0 0 0 / 0.3));
+    animation: hero-spin 22s linear infinite;
+}
+
+.badge-bg {
+    fill: var(--yellow);
+}
+
+.showcase-badge text {
+    font-family: var(--font);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    fill: var(--red-deep);
+}
+
+.badge-heart {
+    fill: var(--red-dark);
+}
+
+/* Floating dish card with add-to-cart */
+.showcase-card {
+    position: absolute;
+    left: -0.5rem;
+    bottom: 6.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-width: 15rem;
+    padding: 0.7rem;
+    border-radius: 20px;
+    background: rgb(255 255 255 / 0.96);
+    color: var(--ink);
+    box-shadow: 0 18px 40px rgb(40 0 5 / 0.35);
+    transition: transform 0.3s ease;
+}
+
+.showcase-card:hover {
+    transform: translateY(-3px);
+}
+
+.showcase-card-thumb {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.showcase-card-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.showcase-card-text p {
+    margin: 0;
+    line-height: 1.25;
+}
+
+.showcase-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red-dark);
+}
+
+.showcase-name {
+    font-weight: 700;
+}
+
+.showcase-price {
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+.showcase-add {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--red-dark);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgb(200 25 36 / 0.35);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.showcase-add:hover {
+    background: var(--red-deep);
+    transform: rotate(90deg) scale(1.05);
+}
+
+.showcase-add svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+}
+
+.showcase-add.is-added {
+    animation: hero-pop 0.4s ease;
+}
+
+@keyframes hero-pop {
+    50% { transform: scale(1.2); }
+}
+
+/* Thumbnails */
+.showcase-thumbs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.65rem;
+    margin-top: 1.25rem;
+}
+
+.showcase-thumb {
+    position: relative;
+    width: 72px;
+    height: 56px;
+    padding: 0;
+    overflow: hidden;
+    border: 3px solid rgb(255 255 255 / 0.45);
+    border-radius: 14px;
+    background: none;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.showcase-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.showcase-thumb:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.showcase-thumb[aria-pressed="true"] {
+    border-color: var(--yellow);
+    opacity: 1;
+}
+
+/* Progress bar on the active thumbnail (filled by home.js) */
+.thumb-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.1s linear; /* smooths the 10-per-second updates */
+}
+
+.showcase-pause {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgb(255 255 255 / 0.35);
+    border-radius: 50%;
+    background: rgb(255 255 255 / 0.12);
+    color: #fff;
+    cursor: pointer;
+}
+
+.showcase-pause[hidden] {
+    display: none;
+}
+
+.showcase-pause:hover {
+    background: rgb(255 255 255 / 0.25);
+}
+
+.showcase-pause svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.showcase-pause .icon-play,
+.showcase-pause[aria-pressed="true"] .icon-pause {
+    display: none;
+}
+
+.showcase-pause[aria-pressed="true"] .icon-play {
+    display: block;
+    fill: currentColor;
+}
+
+/* Wave into the next section */
+.hero-wave {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 60px;
+    fill: var(--page);
+}
+
+/* ---------- Story ---------- */
+
+.story {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+}
+
+.story img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.story p {
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+/* ---------- Featured dishes ---------- */
+
+.featured {
+    background: var(--surface);
+}
+
+.section-cta {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+/* ---------- Catering call to action ---------- */
+
+.cta-band {
+    padding: clamp(3rem, 7vw, 4.5rem) 0;
+    background: var(--red-dark);
+    color: #fff;
+    text-align: center;
+}
+
+.cta-band p {
+    max-width: 34rem;
+    margin: 0 auto 1.75rem;
+    font-size: 1.1rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+    .hero-grid,
+    .story {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        max-width: 16ch;
+    }
+
+    .hero-decor-sun {
+        display: none;
+    }
+
+    .hero-showcase {
+        padding-left: 0;
+    }
+
+    .showcase-badge {
+        top: -1.25rem;
+        right: -0.5rem;
+        width: 92px;
+        height: 92px;
+    }
+
+    .showcase-card {
+        left: 0.75rem;
+        bottom: 6.25rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero-actions .btn {
+        flex: 1 1 100%;
+    }
+
+    .hero-chips li {
+        font-size: 0.82rem;
+    }
+
+    .showcase-card {
+        right: 0.75rem;
+        min-width: 0;
+        bottom: 5.5rem;
+    }
+
+    .showcase-thumbs {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .showcase-thumb {
+        width: 58px;
+        height: 46px;
+    }
+}

@@ -1,485 +1,127 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    color: #333333;
+/* ==========================================================================
+   Amber — Contact page
+   Shared header, footer, buttons, info card and map are in styles.css.
+   ========================================================================== */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 2rem;
+    align-items: start;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-
-}
-
-.logo {
-    display: flex;
-    justify-content: flex-end;
-    flex-grow: 0.1;
-}
-
-.logo img {
-    height: 60px;
-}
-
-
-nav {
-    flex-grow: 65;
-    display: flex;
-    justify-content: flex-end;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px; /* Adjusted gap between list items */
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px; /* Add padding for spacing */
-    background-color: #f8f8f8;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 0px; /* Rounded corners for the list items */
-    border-bottom-left-radius: 30px; /* Bottom left radius 30px */
-    border-bottom-right-radius: 30px; /* Bottom right radius 30px */
-    overflow: hidden; /* Ensure the pseudo-element stays within the li bounds */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and color */
-}
-
-nav ul li::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: red; /* Red background */
-    border: 2px solid black; /* Black stroke */
-    border-top-left-radius: 0; /* Top left radius 0 */
-    border-top-right-radius: 0; /* Top right radius 0 */
-    border-bottom-left-radius: 30px; /* Bottom left radius 30px */
-    border-bottom-right-radius: 30px; /* Bottom right radius 30px */
-    z-index: -1; /* Ensure the rectangle is behind the text */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
-
-nav ul li:hover::before,
-nav ul li.active::before {
-    background-color: #E61F2B; /* Change background color on hover and active */
-}
-
-nav ul li:hover,
-nav ul li.active {
-    background-color: #E61F2B; /* Change li background color on hover and active */
-}
-
-nav a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    position: relative;
-    z-index: 1; /* Ensure the link text is above the pseudo-element */
-    transition: color 0.3s ease; /* Smooth transition for color */
-}
-
-nav ul li:hover a,
-nav ul li.active a {
-    color: white; /* Change link color to white on hover and active */
-}
-
-nav ul li button {
-    background-color: white;
-    border: 1px solid #E61F2B; /* Add border color and width */
-    color: #E61F2B;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and color */
-}
-
-nav ul li button:hover {
-    background-color: #E61F2B;
-    color: white;
-}
-
-/* Scrollbar styles for WebKit browsers */
-::-webkit-scrollbar {
-    width: 16px; /* Increase width of the scrollbar */
-}
-
-::-webkit-scrollbar-track {
-    background: white; /* Track background color */
-    border-radius: 10px; /* Track border radius */
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #E61F2B; /* Scrollbar thumb color */
-    border-radius: 10px; /* Scrollbar thumb border radius */
-    border: 4px solid white; /* Increase the border around the thumb */
-}
-
-/* Scrollbar styles for Firefox */
-* {
-    scrollbar-width: auto; /* Make scrollbar width auto */
-    scrollbar-color: #E61F2B white; /* Scrollbar thumb and track colors */
-}
-
-
-.profile {
-    display: flex;
-    justify-content: flex-end;
-    flex-grow: 5;
-}
-
-.profile img {
-    height: 48px;
-}
-
-.cart {
-    display: flex;
-    justify-content: flex-end;
-    flex-grow: 0.5;
-}
-
-.cart img {
-    height: 48px;
-}
-
-.call-banner {
-    padding: 50px 20px;
-    font-size: 1.2em;
-    color: #ff0000;
-}
-
-.contact-section {
-    text-align: center;
-    padding: 20px;
-}
-
-.contact-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.contact-header .call-banner {
-    position: absolute;
-    left: 20px;
-    bottom: -30px; /* Adjust this value to move the banner further down */
-
-    padding: 50px 10px;
-    font-size: 1.2em;
-    color: #ff0000;
-    text-align: left;
-}
-
-.contact-header h1 {
-    margin: 0;
-    color: #ff0000;
-    font-size: 4em;
-    text-align: center;
-}
-
-.contact-section h1 {
-    border: 1px solid #ff0000;
-    height: 100px;
-    margin-top: 50px;
-    color: #ff0000;
-    font-size: 3em;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0 20px; /* Adjust padding as needed */
-    width: 50%; /* Set the width to 50% of its container */
-    margin-left: auto; /* Center the element horizontally */
-    margin-right: auto; /* Center the element horizontally */
-    transition: background-color 0.3s, transform 0.3s; /* Add transition effect */
-    position: relative; /* Add position relative for sliding animation */
-    animation: pulse 2s infinite; /* Add animation effect */
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.contact-section h1 span {
-    align-self: flex-end;
-    margin-bottom: 25px;
-}
-
-.contact-section h1:hover {
-    background-color: red; /* Change background color on hover */
-    transform: translateX(10px); /* Slide to the right on hover */
-    color: white; /* Change color of h1 element to white on hover */
-}
-
-.contact-section h1 i {
-    position: absolute;
-    margin-top: 20px;
-    font-size: 2em;
-    color: #000;
-    margin-left: 10px; /* Add margin between icons */
-}
-.contact-section h1 i {
-    position: absolute;
-    margin-top: 20px;
-    font-size: 2em;
-    color: #000;
-    margin-left: 10px; /* Add margin between icons */
-}
-
-
-.contact-container {
-
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.contact-info {
-    width: 45%;
-    height: 650px;
-    background-color: #ffcc00 ;
-    padding: 30px;
-    border-radius: 0px;
-    gap: 20px;
-    text-align: left;
-}
+/* ---------- Contact information (yellow card) ---------- */
 
 .contact-info h2 {
-    font-style: bold;
-    font-size: 44px;
-    color: #ff0000;
+    color: var(--red-deep);
 }
 
-.contact-info p {
-    color: #E61F2B;
-    font-size: 22px;
-    margin: 10px 0;
+.contact-info .info-list {
+    margin: 1.75rem 0 2rem;
 }
 
-.contact-info img {
-    vertical-align: middle;
-    margin-right: 10px;
+.contact-info h3 {
+    margin-bottom: 0.75rem;
 }
 
-.social-icons a img {
-    margin-top: 130px;
-    height: 80px;
-    margin-right: 10px;
+/* ---------- Form ---------- */
+
+.contact-form-card {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 2px solid var(--yellow);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
 }
 
-.contact-form {
-    width: 600px;
-    text-align: left;
+.contact-form-card h2 {
+    color: var(--red-dark);
 }
 
-.contact-form h2 {
-    color: #ff0000;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form input{
-    font-size: 15px;
-    margin: 10px 0;
-    padding: 10px;
-    height: 30px;
-    border: 1px solid #ffcc00;
-    border-radius: 0dvh;
-}
-
-.contact-form textarea {
-    margin: 10px 0;
-    height: 220px;
-    font-size: 20px;
-    padding: 10px;
-    border: 2px solid #ffcc00;
-    border-radius: 0px;
-}
-
-.contact-form button {
-    padding: 10px;
-    color: #ff0000;
-    width: 200px;
-    height: 60px;
-    font-size: 16px;
-    font-style: bold;
-    border: 2px solid #ffcc00;
-    background: none; /* Remove background */
-    transition: color 0.3s, transform 0.3s; /* Add transition effect */
-}
-
-.contact-form button:hover {
-    color: white; /* Change text color to red on hover */
-    background-color: red; /* Change background color to red on hover */
-    transform: translateY(3px); /* Move button down by 3 pixels on hover */
-}
-
-
-.map-location {
-
-    margin-top: 500px;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    height: 700px;
-    max-width: 1450px;       /* Adjust the maximum width */
-    margin: 0 auto 50px auto; /* Center the container horizontally and add bottom margin */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
-    animation: fadeIn 0.5s ease; /* Add fade-in animation */
-    background-image: url('asset/image/mapview/mapview.png'); /* Add background image URL */
-    background-size: cover; /* Adjust background image size */
-    background-position: center; /* Adjust background image position */
-    top: 250px; /* Adjust the top value to move the container downward */
-    transition: transform 0.3s ease; /* Smooth transition */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-.contact-content .map img:hover {
-    transform: scale(1.1); /* Expand the image on hover */
-}
-
-
-.map-location h2 {
-    margin-top: -150px;
-    margin-left: 340px;
-    width: 800px;
-    padding: 20px;
-    border: 2px solid #E61F2B;
-    font-size: 48px;
-    color: #E61F2B;
-    align-self: flex-end;
-    margin-bottom: 25px;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Add transition effect */
-    animation: pulse 2s infinite; /* Add animation effect */
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.map-location h2:hover {
-    background-color: #E61F2B;
-    color: white;
-    transform: translateX(10px); /* Slide to the right on hover */
-}
-
-
-
-.branches {
-    margin-top: 300px;
-    text-align: center;
-    padding: 20px;
-}
-
-.branches h2 {
-    border: 2px solid #ff0000;
-    color: #ff0000;
-    width: 1000px;
-    padding: 20px;
-    font-size: 48px;
-    margin-left: 250px;
-    animation: pulse 2s infinite; /* Add animation effect */
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-footer {
-    margin-top: 400px;
-    background-color: #333;
-    color: #fff;
-    padding: 50px 20px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.footer-content .footer-section {
-    width: 23%;
-}
-
-.footer-content .footer-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.footer-content .footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-content .footer-section ul li {
-    margin-bottom: 5px;
-}
-
-.footer-content .footer-section ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.footer-icons {
+.form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    height: 50px;
-    width: 50px;
-    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
-.footer-icons a img {
-    height: 30px;
-    margin: 0 10px;
+.field {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.field-full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.optional {
+    font-weight: 400;
+    color: var(--muted);
+}
+
+/* Border colour has 3:1 contrast with the white card, so fields are clearly visible (WCAG 1.4.11) */
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #9E8D80;
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input:hover,
+.field textarea:hover {
+    border-color: #6F6158;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: var(--red-dark);
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(200 25 36 / 0.18);
+}
+
+.field textarea {
+    min-height: 10rem;
+    resize: vertical;
+}
+
+.form-status {
+    margin: 1rem 0 0;
+    font-weight: 500;
+}
+
+.form-status:empty {
+    display: none;
+}
+
+.form-status[data-state="success"] {
+    color: #1E7B34;
+}
+
+.form-status[data-state="error"] {
+    color: var(--red-dark);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+    /* minmax(0, 1fr) lets the cards shrink on very narrow phones */
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 }

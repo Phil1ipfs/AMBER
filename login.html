@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | Amber</title>
+    <meta name="description" content="Log in to your Amber account to access your orders and favorites.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+    <main class="auth-card">
+        <!-- Brand panel: food photo with red overlay -->
+        <aside class="auth-visual" aria-hidden="true">
+            <img class="auth-photo" src="asset/image/CHICKEN/Garlic Fried Chicken.jpg" alt="" width="1784" height="1338">
+            <div class="auth-visual-shape"></div>
+            <div class="auth-visual-corner"></div>
+            <img class="auth-visual-leaf" src="asset/image/decor/leaf-sprig.svg" alt="">
+            <div class="auth-visual-content">
+                <div class="auth-logo"><img src="asset/image/amberlogo.png" alt="" width="166" height="84"></div>
+                <p class="auth-tagline">Authentic<br>Filipino Food
+                    <svg class="auth-rays" viewBox="0 0 40 40"><path d="M6 30L18 20M10 38l16-6M4 20l10-10"/></svg>
+                </p>
+                <p class="auth-tagline-sub">Traditional flavors,<br>made with love.
+                    <svg class="auth-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+                </p>
+            </div>
+        </aside>
+
+        <!-- Form panel -->
+        <section class="auth-main" aria-labelledby="auth-title">
+            <a class="auth-back" href="index.html">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+                Back to Amber
+            </a>
+
+            <div class="auth-head">
+                <p class="auth-script">Welcome back!</p>
+                <h1 id="auth-title">Log in to your Amber account</h1>
+                <svg class="auth-head-rays" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 30l8-14M24 34l14-10M22 44h16"/></svg>
+                <p class="auth-sub">Access your orders, favorites and more.</p>
+            </div>
+
+            <form class="auth-form" data-auth-form="login" novalidate>
+                <div class="auth-alert" role="alert" hidden></div>
+
+                <div class="auth-field">
+                    <label for="identifier">Email or Phone Number</label>
+                    <div class="input-wrap">
+                        <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                        <input id="identifier" name="identifier" type="text" autocomplete="username" placeholder="Enter your email or phone number" required aria-describedby="identifier-error">
+                    </div>
+                    <p class="field-error" id="identifier-error"></p>
+                </div>
+
+                <div class="auth-field">
+                    <label for="password">Password</label>
+                    <div class="input-wrap">
+                        <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required aria-describedby="password-error">
+                        <button class="toggle-password" type="button" data-toggle-password="password" aria-label="Show password" aria-pressed="false">
+                            <svg class="icon-eye" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="icon-eye-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 5.1A10.7 10.7 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.2 4.2M6.6 6.6C3.9 8.3 2 12 2 12s3.5 7 10 7c1.9 0 3.5-.6 4.9-1.4M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+                        </button>
+                    </div>
+                    <p class="field-error" id="password-error"></p>
+                </div>
+
+                <div class="auth-row">
+                    <label class="auth-check">
+                        <input type="checkbox" name="remember" checked>
+                        Remember me
+                    </label>
+                    <button class="auth-link" type="button" data-forgot-password>Forgot password?</button>
+                </div>
+
+                <button class="btn btn-cta btn-block auth-submit" type="submit">
+                    <span class="btn-label">Log In</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    <span class="spinner" aria-hidden="true"></span>
+                </button>
+
+                <p class="auth-divider"><span>or</span></p>
+
+                <button class="btn btn-google btn-block" type="button" data-google-auth>
+                    <svg class="google-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+                    <span class="btn-label">Continue with Google</span>
+                    <span class="spinner" aria-hidden="true"></span>
+                </button>
+            </form>
+
+            <p class="auth-switch">Don't have an account? <a href="signup.html" data-auth-nav>Sign up</a></p>
+
+            <img class="auth-sun" src="asset/image/decor/sun.svg" alt="">
+        </section>
+    </main>
+
+    <!-- Supabase Auth (settings in supabase-config.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="account.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

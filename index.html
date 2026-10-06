@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amber | Filipino Restaurant</title>
+    <meta name="description" content="Amber serves Filipino favorites cooked fresh every day, for dine-in, takeout and catering.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html"><img src="asset/image/amberlogo.png" alt="Amber home" width="166" height="84"></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-bar"></span><span class="sr-only">Menu</span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a class="profile" href="login.html" aria-label="Log in or sign up"><svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg></a>
+                <button class="cart-button" type="button" data-cart-open aria-label="Open cart" aria-controls="cart-drawer">
+                    <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 11.2a1.5 1.5 0 0 1-1.5 1.3H8a1.5 1.5 0 0 1-1.5-1.3z"/><path d="M9 10.5V7a3 3 0 0 1 6 0v3.5"/></svg>
+                    <span class="cart-count" data-cart-count hidden>0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <img class="hero-decor hero-decor-leaf" src="asset/image/decor/leaf-sprig.svg" alt="">
+            <img class="hero-decor hero-decor-sun" src="asset/image/decor/sun.svg" alt="">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="hero-script">Welcome to Amber</p>
+                    <h1>Filipino favorites, <span class="hero-highlight">cooked fresh<svg viewBox="0 0 220 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13C50 4 120 2 217 9"/></svg></span> every day</h1>
+                    <p class="hero-lead">From crispy pata to pancit for the whole family, Amber serves comforting classics made with care, for dine-in, takeout and celebrations.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-gold btn-lg" href="menu.html">
+                            Explore the menu
+                            <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        </a>
+                        <a class="btn btn-ghost-light btn-lg" href="Contact.html?subject=Table%20reservation">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                            Reserve a table
+                        </a>
+                    </div>
+                    <ul class="hero-chips">
+                        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Open Mon–Fri, 10 AM – 9 PM</li>
+                        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Dine-in · Takeout · Catering</li>
+                    </ul>
+                </div>
+
+                <!-- Featured dish showcase: thumbnails switch the big photo; it also rotates on its own (home.js) -->
+                <div class="hero-showcase" data-showcase>
+                    <div class="showcase-stage">
+                        <img class="showcase-img" src="asset/image/PORK/Crispy Pata.jpg" alt="Crispy pata on a white plate" width="600" height="450">
+                        <svg class="showcase-badge" viewBox="0 0 120 120" aria-hidden="true">
+                            <defs><path id="badge-circle" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
+                            <circle cx="60" cy="60" r="58" class="badge-bg"/>
+                            <text><textPath href="#badge-circle">FRESH DAILY • MADE WITH LOVE •</textPath></text>
+                            <path class="badge-heart" d="M60 74s-12-7.5-12-17a6.8 6.8 0 0 1 12-4.4A6.8 6.8 0 0 1 72 57c0 9.5-12 17-12 17z"/>
+                        </svg>
+                    </div>
+
+                    <div class="showcase-card" data-id="crispy-pata" data-name="Crispy Pata" data-price="1700">
+                        <img class="showcase-card-thumb" src="asset/image/PORK/Crispy Pata.jpg" alt="" width="600" height="450">
+                        <div class="showcase-card-text">
+                            <p class="showcase-label">Featured dish</p>
+                            <p class="showcase-name">Crispy Pata</p>
+                            <p class="showcase-price">PHP 1,700</p>
+                        </div>
+                        <button class="showcase-add add-to-cart" type="button" aria-label="Add Crispy Pata to cart">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="showcase-thumbs" role="group" aria-label="Featured dishes">
+                        <button class="showcase-thumb" type="button" aria-pressed="true" data-id="crispy-pata" data-name="Crispy Pata" data-price="1700" data-img="asset/image/PORK/Crispy Pata.jpg" data-alt="Crispy pata on a white plate">
+                            <img src="asset/image/PORK/Crispy Pata.jpg" alt="" width="600" height="450"><span class="sr-only">Show Crispy Pata</span><span class="thumb-progress"></span>
+                        </button>
+                        <button class="showcase-thumb" type="button" aria-pressed="false" data-id="pancit-malabon" data-name="Pancit Malabon" data-price="1700" data-img="asset/image/PANCIT/Original Pancit Malabon.jpg" data-alt="Pancit Malabon topped with shrimp and egg">
+                            <img src="asset/image/PANCIT/Original Pancit Malabon.jpg" alt="" width="600" height="450" loading="lazy"><span class="sr-only">Show Pancit Malabon</span><span class="thumb-progress"></span>
+                        </button>
+                        <button class="showcase-thumb" type="button" aria-pressed="false" data-id="lechon-kawali" data-name="Lechon Kawali" data-price="1700" data-img="asset/image/PORK/Lechon Kawali.jpg" data-alt="Lechon kawali with dipping sauce">
+                            <img src="asset/image/PORK/Lechon Kawali.jpg" alt="" width="600" height="450" loading="lazy"><span class="sr-only">Show Lechon Kawali</span><span class="thumb-progress"></span>
+                        </button>
+                        <button class="showcase-thumb" type="button" aria-pressed="false" data-id="sisig-bagnet" data-name="Sisig Bagnet" data-price="1700" data-img="asset/image/PORK/Sisig.jpg" data-alt="Sizzling sisig bagnet">
+                            <img src="asset/image/PORK/Sisig.jpg" alt="" width="600" height="450" loading="lazy"><span class="sr-only">Show Sisig Bagnet</span><span class="thumb-progress"></span>
+                        </button>
+                        <button class="showcase-pause" type="button" aria-label="Pause slideshow" aria-pressed="false" hidden>
+                            <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+                            <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <svg class="hero-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V30C160 8 320 0 480 10s320 36 480 36 320-22 480-34V60z"/></svg>
+        </section>
+
+        <section class="section">
+            <div class="container story">
+                <img src="asset/image/collage (1).png" alt="Collage of Amber dishes, happy diners and food delivery" width="541" height="336" loading="lazy">
+                <div>
+                    <span class="eyebrow">Our story</span>
+                    <h2>A culinary haven built on passion</h2>
+                    <p>Amber began with a shared love of exceptional food and warm, attentive service. Today we bring that same passion to every plate, inviting guests to discover flavors that feel like home.</p>
+                    <a class="btn btn-outline" href="About.html">More about us</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section featured">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Customer favorites</span>
+                    <h2>Dishes our guests love</h2>
+                    <p class="lead">A taste of what's waiting on our menu.</p>
+                </div>
+                <div class="menu-grid">
+                <article class="menu-card" data-id="cheese-sticks" data-name="Cheese Sticks" data-price="1400">
+                    <span class="badge-bestseller">Bestseller</span>
+                    <img src="asset/image/Cheese Sticks 1.png" alt="Cheese Sticks" width="600" height="450" loading="lazy">
+                    <h3>Cheese Sticks</h3>
+                    <p>Crispy cheese sticks served with a side of marinara sauce.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">PHP 1,400</span>
+                        <button class="btn btn-primary btn-sm add-to-cart" type="button" aria-label="Add Cheese Sticks to cart">Add to cart</button>
+                    </div>
+                </article>
+                <article class="menu-card" data-id="lomi-special" data-name="Lomi Special" data-price="1400">
+                    <span class="badge-bestseller">Bestseller</span>
+                    <img src="asset/image/Lomi Special.png" alt="Lomi Special" width="600" height="450" loading="lazy">
+                    <h3>Lomi Special</h3>
+                    <p>Thick egg noodles in a savory broth with pork and vegetables.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">PHP 1,400</span>
+                        <button class="btn btn-primary btn-sm add-to-cart" type="button" aria-label="Add Lomi Special to cart">Add to cart</button>
+                    </div>
+                </article>
+                <article class="menu-card" data-id="crispy-pata" data-name="Crispy Pata" data-price="1700">
+                    <img src="asset/image/PORK/Crispy Pata.jpg" alt="Crispy Pata" width="600" height="450" loading="lazy">
+                    <h3>Crispy Pata</h3>
+                    <p>Deep-fried pork knuckle, crispy outside and tender inside.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">PHP 1,700</span>
+                        <button class="btn btn-primary btn-sm add-to-cart" type="button" aria-label="Add Crispy Pata to cart">Add to cart</button>
+                    </div>
+                </article>
+                <article class="menu-card" data-id="pancit-malabon" data-name="Pancit Malabon" data-price="1700">
+                    <img src="asset/image/PANCIT/Original Pancit Malabon.jpg" alt="Pancit Malabon" width="600" height="450" loading="lazy">
+                    <h3>Pancit Malabon</h3>
+                    <p>Thick rice noodles in a rich seafood sauce, topped with shrimp and egg.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">PHP 1,700</span>
+                        <button class="btn btn-primary btn-sm add-to-cart" type="button" aria-label="Add Pancit Malabon to cart">Add to cart</button>
+                    </div>
+                </article>
+                </div>
+                <div class="section-cta">
+                    <a class="btn btn-primary" href="menu.html">See the full menu</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-band">
+            <div class="container">
+                <h2>Planning a celebration?</h2>
+                <p>We cater events of all sizes, from intimate gatherings to grand celebrations.</p>
+                <a class="btn btn-light" href="Contact.html?subject=Catering%20inquiry">Ask about catering</a>
+            </div>
+        </section>
+
+        <section class="location" aria-labelledby="location-title">
+            <img class="location-decor location-decor-left" src="asset/image/decor/leaf-sprig.svg" alt="">
+            <img class="location-decor location-decor-right" src="asset/image/decor/leaf-sprig.svg" alt="">
+            <div class="container location-grid">
+                <div class="location-intro">
+                    <p class="script-label">Visit Us</p>
+                    <h2 id="location-title">
+                        Come hungry, leave happy
+                        <svg class="smile" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 26c4 10 24 10 28 0" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><circle cx="17" cy="17" r="2.6" fill="currentColor"/><circle cx="31" cy="17" r="2.6" fill="currentColor"/></svg>
+                    </h2>
+                    <img class="location-sun" src="asset/image/decor/sun.svg" alt="">
+                    <p class="location-lead">Find us at our cozy spot in Riverside, San Francisco. We're always ready to serve you the best Filipino flavors, made with love.</p>
+
+                    <ul class="location-cards">
+                        <li class="location-card">
+                            <span class="location-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+                            <div><strong>Address</strong>Riverside 25, San Francisco, California</div>
+                        </li>
+                        <li class="location-card">
+                            <span class="location-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+                            <div><strong>Phone</strong><a href="tel:800234567">800-234-567</a></div>
+                        </li>
+                        <li class="location-card">
+                            <span class="location-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                            <div><strong>Opening hours</strong>Monday to Friday<br>10:00 AM – 9:00 PM</div>
+                        </li>
+                    </ul>
+
+                    <a class="btn btn-cta" href="Contact.html">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                        Get in touch
+                        <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+
+                <div class="location-stage">
+                    <div class="location-panel">
+                        <p class="panel-label">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                            Our location
+                        </p>
+                        <p class="panel-address">Riverside 25, San Francisco, California</p>
+                        <hr>
+                        <p class="panel-label">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                            Opening hours
+                        </p>
+                        <p class="panel-hours">Monday to Friday<br>10:00 AM – 9:00 PM</p>
+                        <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&amp;query=37.7749,-122.4194" target="_blank" rel="noopener">
+                            View on Google Maps
+                            <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            <span class="sr-only">(opens in a new tab)</span>
+                        </a>
+                    </div>
+
+                    <!-- Live Google map (no API key needed). The address "Riverside 25" isn't recognised by Google,
+                         so the map is centred on San Francisco and Amber's marker is drawn on top.
+                         Once you have the real address, change data-lat / data-lng to its coordinates. -->
+                    <div class="map-card" data-map data-lat="37.7749" data-lng="-122.4194" data-zoom="13">
+                        <iframe src="https://maps.google.com/maps?ll=37.7749,-122.4194&amp;z=13&amp;t=m&amp;output=embed" title="Map of San Francisco showing Amber's location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="map-marker" aria-hidden="true">
+                            <div class="map-popup"><strong>Amber Filipino Food</strong>Riverside 25, San Francisco</div>
+                            <svg class="map-pin" viewBox="0 0 40 52"><path d="M20 51S3 33 3 19a17 17 0 0 1 34 0c0 14-17 32-17 32z" fill="#C81924" stroke="#fff" stroke-width="2.5"/><circle cx="20" cy="19" r="6.5" fill="#fff"/></svg>
+                        </div>
+                        <div class="map-type" role="group" aria-label="Map view" hidden>
+                            <button type="button" data-map-type="m" aria-pressed="true">Map</button>
+                            <button type="button" data-map-type="k" aria-pressed="false">Satellite</button>
+                        </div>
+                        <div class="map-zoom" hidden>
+                            <button type="button" data-map-zoom="1" aria-label="Zoom in">+</button>
+                            <button type="button" data-map-zoom="-1" aria-label="Zoom out">&minus;</button>
+                            <button type="button" data-map-recenter aria-label="Re-center map on Amber">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-decor" aria-hidden="true">
+            <img class="decor-leaf-left" src="asset/image/decor/leaf-sprig.svg" alt="">
+            <img class="decor-leaf-right" src="asset/image/decor/leaf-sprig.svg" alt="">
+            <img class="decor-food-left" src="asset/image/Lomi Special.png" alt="" loading="lazy">
+            <img class="decor-food-right" src="asset/image/Hotatay soup.png" alt="" loading="lazy">
+        </div>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="asset/image/amberlogo.png" alt="Amber" width="166" height="84">
+                <p>Filipino favorites cooked fresh every day, for dine-in, takeout and catering.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Amber on Facebook"><img src="asset/image/socialmedaccount/FB.png" alt=""></a>
+                    <a href="#" aria-label="Amber on Instagram"><img src="asset/image/socialmedaccount/ig.png" alt=""></a>
+                    <a href="#" aria-label="Amber on Twitter"><img src="asset/image/socialmedaccount/twitter.png" alt=""></a>
+                    <a href="#" aria-label="Amber on LinkedIn"><img src="asset/image/socialmedaccount/linkined.png" alt=""></a>
+                </div>
+            </div>
+            <div>
+                <h2>Explore</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Opening Hours</h2>
+                <ul>
+                    <li>Monday to Friday</li>
+                    <li>10:00 AM – 9:00 PM</li>
+                </ul>
+            </div>
+            <div>
+                <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Contact Us</h2>
+                <ul class="footer-icon-list">
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><a href="tel:800234567">800-234-567</a></li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Riverside 25, San Francisco, California</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Amber. All rights reserved.</p>
+            <p class="footer-tagline" aria-hidden="true">Good food brings people together &hearts;</p>
+        </div>
+    </footer>
+
+    <!-- Accounts (Supabase): shows the signed-in avatar + menu in the header -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="account.js"></script>
+    <script src="site.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

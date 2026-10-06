@@ -1,0 +1,5 @@
+# Files that should not be published on the website
+.vscode
+.gitignore
+.gitattributes
+.DS_Store
